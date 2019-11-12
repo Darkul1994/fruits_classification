@@ -3,14 +3,10 @@
 > particular, the CNN developed for this project will attempt to predict a fruit or vegetable variety in a given photo.
 
 ## Table of contents
-* [General info](#general-info)
 * [Data set](#data-set)
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Status](#status)
-
-## General info
-Add more general information about project. What the purpose of the project is? Motivation?
 
 ## Data set
 Images used to train neural nets are obtained from the the website [@www.kaggle.com/moltean/fruits](https://www.kaggle.com/moltean/fruits).
@@ -20,7 +16,7 @@ Walnut.
 
 Training set size: 7225 images
 
-Validation set size: 2359 images
+Validation set size: 2414 images
 
 Number of classes: 10 (fruits):
 * 0 - Apple Red Yellow 2
@@ -34,8 +30,6 @@ Number of classes: 10 (fruits):
 * 8 - Tomato 1
 * 9 - Walnut
 
-Image size: 100x100 pixels
-
 ## Technologies
 This project is created with:
 * Python - version 3.7
@@ -45,12 +39,6 @@ Create your virtualenv and install project requirements:
 `pip install -r requirements.txt`
 Run main program with:
 `python mainy.py`
-TODO add parameter to train
-`python main.py --train=True`
-`python main.py train`
 
 ## Status
 Project is: _finished_
-
-## Results
-Przetrenowalas taka i taka siec, wykresy, wyniki, plot confusion matrix

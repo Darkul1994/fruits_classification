@@ -35,10 +35,19 @@ This project is created with:
 * Python - version 3.7
 
 ## Setup
+You need to copy images from the fruits dataset into the project directory to train the model and place them into the 
+data directory in fruits_train and fruits_test directories. 
+  * data
+      * fruits_test
+      * fruits_train
+
+You can also run the program without training, the best model is saved in the file: best_model.h5
+To train the model you have to set a train variable in main.py as True, this will also plot a training history.
+
 Create your virtualenv and install project requirements:
 `pip install -r requirements.txt`
 Run main program with:
-`python mainy.py`
+`python main.py`
 
 ## Status
 Project is: _finished_

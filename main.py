@@ -13,7 +13,7 @@ from data_operations import ImagesGenerator, plot_cm
 from models import NeuralNetworkModel
 
 
-train = False
+train = True
 
 
 model = NeuralNetworkModel()
@@ -26,7 +26,7 @@ test_labels = test_generator.labels
 
 
 if train:
-    mc = ModelCheckpoint('best_model.h5', monitor='val_accuracy', mode='max', save_best_only=True)
+    mc = ModelCheckpoint('best_model_test.h5', monitor='val_accuracy', mode='max', save_best_only=True)
     history = model.model.fit_generator(train_generator, epochs=15, shuffle=True, verbose=1, validation_data=test_generator, callbacks=[mc])
 else:
     model = load_model('best_model.h5')
@@ -43,8 +43,8 @@ predicted_labels = np.argmax(predictions, axis=-1)
 # summarize history for accuracy and loss
 if train:
     fig, (ax1, ax2) = plt.subplots(1, 2)
-    ax1.plot(history.history['accuracy'], 'r')
-    ax1.plot(history.history['val_accuracy'], 'b')
+    ax1.plot(history.history['categorical_accuracy'], 'r')
+    ax1.plot(history.history['val_categorical_accuracy'], 'b')
     ax1.set_title('Model accuracy')
     ax1.set(xlabel='epoch', ylabel='accuracy')
     ax1.legend(['train', 'test'], loc='upper left')
@@ -56,7 +56,7 @@ if train:
     plt.show()
     fig.savefig('his_acc_loss_mb2')
 
-    print("Final training accuracy = {}".format(history.history["accuracy"][-1]))
+    print("Final training accuracy = {}".format(history.history["categorical_accuracy"][-1]))
     print("Final training loss = {}".format(history.history["loss"][-1]))
 
 

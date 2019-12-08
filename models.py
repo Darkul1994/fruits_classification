@@ -24,7 +24,6 @@ class NeuralNetworkModel:
         self.model.add(Flatten())
         self.model.add(Dense(100))
         self.model.add(Activation('relu'))
-        self.model.add(Dropout(0.3))
         self.model.add(Dense(10, activation='softmax'))
         self.model.summary()
 
@@ -32,5 +31,5 @@ class NeuralNetworkModel:
         self.model.compile(
             loss='categorical_crossentropy',
             optimizer='adam',
-            metrics=['accuracy']
+            metrics=['categorical_accuracy']
         )

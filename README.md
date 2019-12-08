@@ -35,7 +35,7 @@ This project is created with:
 * Python - version 3.7
 
 ## Setup
-You need to copy images from the fruits dataset into the project directory to train the model and place them into the 
+You need to copy images from the fruits data set into the project directory to train the model and place them into the 
 data directory in fruits_train and fruits_test directories. 
   * data
       * fruits_test
@@ -46,8 +46,38 @@ To train the model you have to set a train variable in main.py as True, this wil
 
 Create your virtualenv and install project requirements:
 `pip install -r requirements.txt`
-Run main program with:
+Run the main program with:
 `python main.py`
+
+## Model
+I used convolutional layers with max pooling, fully connected layers and dropout. Similar models were used to image 
+recognition problems. I followed the architecture and created model with almost 100 % accuracy.
+
+Model layers are:
+* Covolutional layer
+* Max pooling
+* Covolutional layer
+* Max pooling
+* Covolutional layer
+* Max pooling
+* Covolutional layer
+* Max pooling
+* Dropout
+* Fully connected layer
+* Fully connected with softmax activation
+
+## Results
+Model is trained and goes to 100 % accuracy. I am saving only the best fitted model with highest accuracy.
+The results - training curves and testing done on test images are shown below.  
+Results after training:  
+Final training accuracy = 1.0  
+Final training loss = 1.8126694522326195e-05  
+
+![Training curve](fig_1.png)  
+The training process goes fastly and model reaches 100 % accuracy. The loss is reduced. There is no overfitting, 
+because I am saving only the best model. 
+![Confusion matrix](cm2.png)  
+As we can see my network is easily recognizing all of the fruits.
 
 ## Status
 Project is: _finished_
